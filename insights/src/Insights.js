@@ -7,7 +7,7 @@ import InsightList from './InsightsList';
 import 'office-ui-fabric-react';
 import './index.css';
 import CardsSection from './CardsSection';
-
+import TextFieldBasicExample from './input'
 function  Insights() {  
   //const [insights, setinsights] = useState([{ id: 1, name: "Microfront end1" }, { id: 2, name: "Microfront end2" }]);  
   return (  
@@ -27,7 +27,8 @@ function  Insights() {
     <div className="ms-Grid-row">
       <div className="ms-Grid-col ms-sm11 ms-xl11 main-element">
         <div className="ms-Grid-row">
-          <h1>insights</h1>
+         
+          <TextFieldBasicExample/>
           {/* <CardsSection /> */}
         </div>
       </div>

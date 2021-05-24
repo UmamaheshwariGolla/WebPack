@@ -15,6 +15,7 @@
     "@babel/core": "7.9.6",
     "@babel/preset-react": "7.9.4",
     "@fluentui/webpack-utilities": "^8.1.0",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "8.1.0",
     "css-loader": "^3.5.3",
     "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
@@ -27,6 +28,10 @@
   },
   "dependencies": {
     "@fluentui/react": "^8.14.13",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.0",
+    "@types/react": "^17.0.6",
+    "@types/react-dom": "^17.0.5",
     "contextmenu": "^1.0.2",
     "lts": "^1.2.0",
     "office-ui-fabric-react": "^7.170.1",

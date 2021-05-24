@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
@@ -6,7 +8,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".jsx", ".js", ".json"],
+    extensions: [".jsx", ".js", ".json",".ts",".tsx"],
   },
 
   devServer: {
@@ -15,6 +17,7 @@ module.exports = {
 
   module: {
     rules: [
+      { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -32,6 +35,9 @@ module.exports = {
   },
 
   plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
     new ModuleFederationPlugin({
       name: 'Insights',
       library: {

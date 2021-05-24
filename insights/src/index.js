@@ -1,3 +1,5 @@
-import Insights from "./Insights";
+// import Insights from "./Insights";
 
-export {Insights };
+// export {Insights };
+
+import("./bootsrap");
