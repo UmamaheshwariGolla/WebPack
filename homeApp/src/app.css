@@ -1,0 +1,23 @@
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-content {
+    display: flex;
+    justify-content: space-between;
+}
+/* 
+.app {
+    font-family: sans-serif;
+    text-align: center;
+  }
+   */
+   .ms-Nav {
+    background-color: white;
+  }
+  
+  .ms-Grid-col {
+    padding-left: 0;
+    margin-left: 0;
+  }

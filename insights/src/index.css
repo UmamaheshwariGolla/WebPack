@@ -1,0 +1,43 @@
+.wrapper {    
+    max-width: 480px;    
+    margin: auto;    
+    background: #fff;    
+    margin-top: 50px;    
+    display: flex;    
+    flex-direction: column;    
+    padding-left: 50px;    
+    padding-right: 50px;    
+    padding-bottom: 50px;    
+  } 
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+#root {
+  background-color: rgba(225, 223, 221, .2);
+}
+
+.ms-Nav {
+  background-color: '#fff';
+}
+
+.ms-Grid-col {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.ms-Viewport {
+  margin: 0 1.5%;
+}
+
+.ms-FocusZone {
+  padding: 0;
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  margin-top: '10px';
+  color: #797596;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
