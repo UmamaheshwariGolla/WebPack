@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "@fluentui/react": "^8.14.12",
-    "@fluentui/react-icons": "^1.1.125",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "@types/react": "^17.0.6",
@@ -39,7 +38,6 @@
     "@uifabric/react-cards": "^0.115.51",
     "office-ui-fabric-react": "^7.170.1",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-grid-system": "^7.1.2"
+    "react-dom": "^16.13.0"
   }
 }

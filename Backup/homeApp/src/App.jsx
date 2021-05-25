@@ -4,6 +4,9 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
+// const Basket = React.lazy(() => import('mf-basket/Basket'))
+// const ProductList = React.lazy(() => import('mf-productList/ProductList'))
+//const Teams= React.lazy(() => import('mf-teams/Teams'))
 const Insights= React.lazy(() => import('mf-insights/Insights'))
 const Matter= React.lazy(() => import('mf-matter/Matter'))
 

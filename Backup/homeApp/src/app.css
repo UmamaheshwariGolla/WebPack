@@ -1,4 +1,4 @@
-/* .app {
+.app {
     display: flex;
     flex-direction: column;
 }
@@ -13,11 +13,11 @@
     text-align: center;
   }
    */
-   /* .ms-Nav {
+   .ms-Nav {
     background-color: white;
   }
   
   .ms-Grid-col {
     padding-left: 0;
     margin-left: 0;
-  } */ 
+  }

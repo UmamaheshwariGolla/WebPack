@@ -1,5 +1,5 @@
 {
-  "name": "matter",
+  "name": "insights",
   "version": "1.0.0",
   "scripts": {
     "build": "npm run build:mf && npm run build:npm",
@@ -30,16 +30,17 @@
     "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
-    "@fluentui/react": "^8.14.12",
-    "@fluentui/react-icons": "^1.1.125",
+    "@fluentui/example-data": "^8.2.0",
+    "@fluentui/react": "^8.14.13",
+    "@fluentui/react-image": "^0.8.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "@uifabric/react-cards": "^0.115.51",
-    "office-ui-fabric-react": "^7.170.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-grid-system": "^7.1.2"
+    "react-hook-form": "^7.6.2",
+    "styled-components": "^5.3.0"
   }
 }

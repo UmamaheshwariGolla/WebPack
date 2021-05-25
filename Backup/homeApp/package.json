@@ -1,45 +1,42 @@
 {
-  "name": "matter",
+  "name": "home",
   "version": "1.0.0",
   "scripts": {
-    "build": "npm run build:mf && npm run build:npm",
-    "build:mf": "webpack --mode production",
-    "build:npm": "babel src --out-dir build",
+    "build": "webpack --mode production",
     "start": "webpack-dev-server --open --mode development",
     "start:live": "webpack-dev-server --open --mode development --liveReload"
   },
-  "main": "./build/index.js",
   "license": "MIT",
   "author": {
     "name": "Jack Herrington",
     "email": "jherr@pobox.com"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.3",
     "@babel/core": "7.9.6",
-    "@babel/preset-env": "^7.10.3",
     "@babel/preset-react": "7.9.4",
+    "@fluentui/webpack-utilities": "^8.1.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "8.1.0",
     "css-loader": "^3.5.3",
     "html-webpack-plugin": "git://github.com/ScriptedAlchemy/html-webpack-plugin#master",
     "style-loader": "1.2.1",
+    "ts-loader": "^9.2.1",
     "typescript": "^4.2.4",
-    "webpack": "^5.0.0-beta.18",
+    "webpack": "5.0.0-beta.18",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.11.0"
   },
   "dependencies": {
-    "@fluentui/react": "^8.14.12",
-    "@fluentui/react-icons": "^1.1.125",
+    "@fluentui/react": "^8.14.13",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
-    "@uifabric/react-cards": "^0.115.51",
+    "contextmenu": "^1.0.2",
+    "lts": "^1.2.0",
     "office-ui-fabric-react": "^7.170.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-grid-system": "^7.1.2"
+    "react-router-dom": "^5.2.0"
   }
 }
