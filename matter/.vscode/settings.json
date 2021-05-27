@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/42d8533a-bf09-4411-8b6b-f1d1ee29120d/resourceGroups/Sonata-Web-DTool/providers/Microsoft.Web/sites/Luigi-Teams-Matter",
+    "appService.deploySubpath": "build"
+}

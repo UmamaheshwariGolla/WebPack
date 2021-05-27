@@ -1,18 +1,19 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
   output: {
-    publicPath: "http://localhost:8083/",
+       
+   publicPath: "http://localhost:8082/", 
+ //publicPath: "https://luigi-teams-p-insights.azurewebsites.net/",
   },
 
   resolve: {
-    extensions: [".jsx", ".js", ".json",".ts",".tsx"],
+    extensions: [".jsx", ".js", ".json",'.ts', '.tsx'],
   },
 
   devServer: {
-    port: 8083,
+    port: 8082,
   },
 
   module: {
@@ -22,13 +23,11 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
-     
-      
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader", 
+          loader: "babel-loader",
         },
       },
     ],
@@ -38,6 +37,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    
     new ModuleFederationPlugin({
       name: 'Insights',
       library: {
@@ -48,6 +48,7 @@ module.exports = {
         './Insights': './src/Insights'
       },
       shared: require('./package.json').dependencies
-    })
+    }),
+   
   ],
 };

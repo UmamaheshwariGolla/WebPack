@@ -3,8 +3,9 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 
 module.exports = {
   output: {
-       chunkFilename: '[name].[chunkhash].js',
-    publicPath: "http://localhost:8084/",
+       
+    publicPath: "http://localhost:8081/", 
+ //publicPath: "https://luigi-teams-p-matter.azurewebsites.net/",
   },
 
   resolve: {
@@ -12,7 +13,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 8084,
+    port: 8081,
   },
 
   module: {

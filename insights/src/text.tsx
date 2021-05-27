@@ -3,11 +3,9 @@ import { TextField, MaskedTextField } from '@fluentui/react/lib/TextField';
 import { Stack, IStackProps, IStackStyles } from '@fluentui/react/lib/Stack';
 import { DropdownErrorExample } from './Components/dropdown';
 import { SearchBox } from '@fluentui/react/lib/SearchBox';
-import { ButtonCommandBarExample } from './Components/CreateButton';
 
 const stackTokens = { childrenGap: 50 };
 const iconProps = { iconName: 'Calendar' };
-
 const stackStyles: Partial<IStackStyles> = { root: { width: 650 } };
 const columnProps: Partial<IStackProps> = {
   tokens: { childrenGap: 15 },
@@ -18,11 +16,8 @@ const columnProps: Partial<IStackProps> = {
   return (
     <Stack horizontal tokens={stackTokens} styles={stackStyles}>
       <Stack {...columnProps}>
-        
-        <SearchBox placeholder="Search" / > 
-    
-       
-        <TextField  placeholder="Matter Description"/>
+        <SearchBox placeholder="Search" / >
+        <TextField  defaultValue="Matter Description"/>
         <DropdownErrorExample/>
       </Stack>
     </Stack>

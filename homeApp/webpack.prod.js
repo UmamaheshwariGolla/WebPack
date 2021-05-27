@@ -60,9 +60,11 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
 module.exports = {
+    mode:'production',
   output: {
-   publicPath: "http://localhost:8080/",
-    //publicPath: "https://luigi-teams-p-container.azurewebsites.net/",
+    publicPath: "https://localhost:8080/",
+ 
+   // publicPath: "https://luigi-teams-p-container.azurewebsites.net/",
   },
 
   resolve: {

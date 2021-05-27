@@ -1,6 +1,4 @@
 
-
-
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
@@ -12,15 +10,13 @@ import './app.css';
 import './productList.css';
 import { Label, Pivot, PivotItem } from '@fluentui/react';
 
-import 'office-ui-fabric-react/dist/css/fabric.css';
 
 const App = () => {
   
 
-
     return (
         <div className="app">
-            
+      
             <div className="app-content">
                 
             <Pivot>
@@ -29,8 +25,9 @@ const App = () => {
                        <section>
                           <React.Suspense fallback={<div>....loading Matter</div>}>
                                <Matter />
+                        
                           </React.Suspense>
-
+                      
                         </section>
                         
                      
@@ -39,18 +36,11 @@ const App = () => {
                         <h1>Insights</h1>
                         <section>
                         <React.Suspense fallback={<div>....loading Insights</div>}>
-                             <Insights/>
+                             <Insights  />
                        </React.Suspense>                   
                       </section>
                     </PivotItem>
-                    <PivotItem headerText="Files">
-                        <h1>Insights</h1>
-                        <section>
-                        <React.Suspense fallback={<div>....loading Insights</div>}>
-                             <Insights/>
-                       </React.Suspense>                   
-                      </section>
-                    </PivotItem>
+                   
             </Pivot>
                 
             </div>
@@ -58,5 +48,50 @@ const App = () => {
        
     )
 };
+
+
+
+// const App = () => {
+//     const [selected, setSelected] = useState([]);
+
+//     const onBuyItemClicked = item => {
+//         console.log(item);
+//         setSelected(curr => [...curr, item]);
+     
+//     };
+
+//     return (
+//         <div className="app">
+           
+//             <div className="app-content">
+//             <Pivot>
+//             <PivotItem headerText="Items">
+                     
+//                 <section>
+//                     <React.Suspense fallback={<div>....loading items</div>}>
+//                         <Matter
+//                             onBuyItem={onBuyItemClicked}
+//                         />
+//                     </React.Suspense>
+//                 </section>
+//                 </PivotItem>
+//                 <PivotItem headerText="Insights">
+//                 <section>
+//                     {
+//                         selected.length > 0 &&
+//                         <React.Suspense fallback={<div>....loading basket</div>}>
+//                             <Insights
+//                                 items={selected}
+//                                 onClear={() => setSelected([])}
+//                             />
+//                         </React.Suspense>
+//                     }
+//                 </section>
+//                 </PivotItem>
+//                 </Pivot>
+//             </div>
+//         </div>
+//     )
+// };
 
 ReactDOM.render(<App />, document.getElementById("app"));

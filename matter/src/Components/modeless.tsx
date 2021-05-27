@@ -1,73 +1,61 @@
 import * as React from 'react';
 import { Dialog, DialogType, DialogFooter } from '@fluentui/react/lib/Dialog';
 import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
-import { ContextualMenu } from '@fluentui/react/lib/ContextualMenu';
-import { SpinButton } from '@fluentui/react/lib/SpinButton';
 import { Toggle } from '@fluentui/react/lib/Toggle';
-import { ComboBox, IComboBoxOption, SelectableOptionMenuItemType } from '@fluentui/react/lib/index';
+import { ContextualMenu } from '@fluentui/react/lib/ContextualMenu';
 import { useBoolean } from '@fluentui/react-hooks';
-import { ButtonCommandBarExample } from './CreateButton';
+import { CommandBarButton } from '@fluentui/react';
 import { IIconProps, Stack, IStackStyles } from '@fluentui/react';
-import { CommandBarButton } from '@fluentui/react/lib/Button';
-
 import TextFieldBasicExample from '../text';
-import { DropdownErrorExample } from './dropdown';
 
-const addIcon: IIconProps = { iconName: 'Add' };
+const modalPropsStyles = { main: { maxWidth: 450 } };
 const dragOptions = {
   moveMenuItemText: 'Move',
   closeMenuItemText: 'Close',
   menu: ContextualMenu,
 };
-const modalPropsStyles = { main: { maxWidth: 450 } };
+const addIcon: IIconProps = { iconName: 'Add' };
 const iconProps = { iconName: 'IncreaseIndentLegacy' };
-
 
 const dialogContentProps = {
   type: DialogType.normal,
-  title: 'Create Matter',
-//   subText: 'enter the details',
-};
-const log = (text: string): (() => void) => {
-  return (): void => {
-    console.log(text);
-  };
+  title: 'Create',
+  subText: '',
 };
 
-const stackStyles: Partial<IStackStyles> = { root: { height: 44 } };
-
-export const DialogBlockingExample: React.FunctionComponent = () => {
+export const DialogModelessExample: React.FunctionComponent = () => {
   const [hideDialog, { toggle: toggleHideDialog }] = useBoolean(true);
-  const [isDraggable, { toggle: toggleIsDraggable }] = useBoolean(true);
+  const [isDraggable, { toggle: toggleIsDraggable }] = useBoolean(false);
+  const stackStyles: Partial<IStackStyles> = { root: { height: 44 } };
+
   const modalProps = React.useMemo(
     () => ({
-      isBlocking: true,
       styles: modalPropsStyles,
-    dragOptions: isDraggable? dragOptions : undefined,
-
+      isModeless: true,
+      dragOptions: isDraggable ? dragOptions : undefined,
     }),
     [isDraggable],
   );
-
   return (
     <>
-   
+
+      <div>
+ 
       <Stack horizontal styles={stackStyles}>
       <CommandBarButton iconProps={addIcon} text="Create" onClick={toggleHideDialog}  />
      </Stack>
     
       
+      </div>
       <Dialog
         hidden={hideDialog}
         onDismiss={toggleHideDialog}
         dialogContentProps={dialogContentProps}
         modalProps={modalProps}
       >
-  
-      <TextFieldBasicExample/>
-
+              <TextFieldBasicExample/>
         <DialogFooter>
-          <PrimaryButton onClick={toggleHideDialog} text="Submit" />
+          <PrimaryButton onClick={toggleHideDialog} text="submit" />
         
         </DialogFooter>
       </Dialog>

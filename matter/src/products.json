@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "name": "Margherita.",
-        "price": "5.50"
+        "name": "item1",
+        "price": "122.60"
     },
     {
         "id": 2,
-        "name": "Pepperoni Pizza",
+        "name": "item2",
         "price": "4.50"
     },
     {
         "id": 3,
-        "name": "BBQ Chicken Pizza",
+        "name": "item3",
         "price": "5.00"
     }
 ]
