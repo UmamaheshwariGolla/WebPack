@@ -25,3 +25,6 @@ export const ButtonCommandBarExample: React.FunctionComponent<IButtonExampleProp
     
   );
 };
+
+
+export default  ButtonCommandBarExample;

@@ -7,6 +7,7 @@ import { useBoolean } from '@fluentui/react-hooks';
 import { CommandBarButton } from '@fluentui/react';
 import { IIconProps, Stack, IStackStyles } from '@fluentui/react';
 import TextFieldBasicExample from '../text';
+import history from '../history';
 
 const modalPropsStyles = { main: { maxWidth: 450 } };
 const dragOptions = {
@@ -19,7 +20,7 @@ const iconProps = { iconName: 'IncreaseIndentLegacy' };
 
 const dialogContentProps = {
   type: DialogType.normal,
-  title: 'Create',
+  title: '',
   subText: '',
 };
 
@@ -42,7 +43,9 @@ export const DialogModelessExample: React.FunctionComponent = () => {
       <div>
  
       <Stack horizontal styles={stackStyles}>
-      <CommandBarButton iconProps={addIcon} text="Create" onClick={toggleHideDialog}  />
+    
+      {/* <CommandBarButton iconProps={addIcon} text="Create"  />
+      //onClick={toggleHideDialog}  /> */}
      </Stack>
     
       
@@ -55,7 +58,7 @@ export const DialogModelessExample: React.FunctionComponent = () => {
       >
               <TextFieldBasicExample/>
         <DialogFooter>
-          <PrimaryButton onClick={toggleHideDialog} text="submit" />
+          <PrimaryButton onClick={toggleHideDialog} text="Save and Open" />
         
         </DialogFooter>
       </Dialog>
