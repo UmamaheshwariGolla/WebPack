@@ -11,7 +11,7 @@ import TextFieldBasicExample from './input'
 import { DocumentCardImageExample } from './Components/DocumentCards';
 import DocumentCardConversationExample from './Components/multipleCards';
 import React from 'react';
-import { initializeIcons } from "@fluentui/react";  
+import { initializeIcons ,Pivot, PivotItem} from "@fluentui/react";  
 
 initializeIcons();
 
@@ -57,9 +57,84 @@ const  Insights=() =>{
       <div className="ms-Grid-col ms-sm11 ms-xl11 main-element">
         <div className="ms-Grid-row">
         
-         <DocumentCardConversationExample/>
+        <Pivot>
+          
+                <PivotItem headerText="Outlook Insights ">
+                <DocumentCardConversationExample/>
+                    </PivotItem>
+                    <PivotItem headerText="  ">
+                    </PivotItem>
+                    <PivotItem headerText="  ">
+                       </PivotItem>
+                       <PivotItem headerText="  ">
+                    </PivotItem>
+                    <PivotItem headerText="  ">
+                       </PivotItem>
+                     <PivotItem headerText="Approvals">
+                     <DocumentCardConversationExample/>
+                    </PivotItem>
+                 
+              <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+                      
+              <PivotItem headerText="  ">
+              </PivotItem>
+              
+                 <PivotItem headerText="Peppermint Related            ">
+                     <DocumentCardConversationExample/>
+                 </PivotItem>
+                 <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+        
+              <PivotItem headerText="  ">
+              </PivotItem>
+                      
+              <PivotItem headerText="  ">
+              </PivotItem>
+              
+                 <PivotItem headerText="Teams Realted          ">
+                     <DocumentCardConversationExample/>
+                 </PivotItem>
+                 <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+                
+              <PivotItem headerText="  ">
+              </PivotItem>
+                   
+              <PivotItem headerText="  ">
+              </PivotItem>
+
+              <PivotItem headerText="  ">
+              </PivotItem>
+                 <PivotItem headerText="Other          ">
+                     <DocumentCardConversationExample/>
+                 </PivotItem>
+                </Pivot>     
+        
         </div>
       </div>
+    
     </div>
  );  
 }  

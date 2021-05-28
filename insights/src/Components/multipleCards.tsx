@@ -31,11 +31,12 @@ const DocumentCardConversationExample: React.FunctionComponent = () => {
   };
 
   const cardStyles: IDocumentCardStyles = {
-    root: { display: 'inline-block', marginRight: 20, width: 320 },
+    root: { display: 'inline-block', marginRight: 20, width: 200, height:100 },
   };
 
   return (
     <div>
+   
       <DocumentCard
         aria-label={
           'Document Card with logo, text preview, and status. Conversation about annual report. ' +
@@ -44,6 +45,7 @@ const DocumentCardConversationExample: React.FunctionComponent = () => {
         styles={cardStyles}
         onClickHref="http://bing.com"
       >
+     
         <DocumentCardLogo {...logoProps} />
         <div className={conversationTileClass}>
           <DocumentCardTitle
@@ -62,6 +64,7 @@ const DocumentCardConversationExample: React.FunctionComponent = () => {
         </div>
         <DocumentCardActivity activity="Sent March 13, 2018" people={people.slice(0, 3)} />
       </DocumentCard>
+  
       <DocumentCard
         aria-label={
           'Document Card with logo, text preview, and status. Further annual report conversation. ' +
@@ -96,6 +99,61 @@ const DocumentCardConversationExample: React.FunctionComponent = () => {
           />
         </div>
         <DocumentCardActivity activity="Sent March 13, 2018" people={people.slice(6)} />
+      </DocumentCard>
+
+      <DocumentCard
+        aria-label={
+          'Document Card with logo, text preview, and status. Conversation about annual report. ' +
+          'Content preview. 3 attachments. Sent by Annie Lindqvist and 2 others in March 13, 2018.'
+        }
+        styles={cardStyles}
+        onClickHref="http://bing.com"
+      >
+        <DocumentCardLogo {...logoProps} />
+        <div className={conversationTileClass}>
+          <DocumentCardTitle
+            title="Conversation about annual report: it has a very very long name which should be truncated."
+            shouldTruncate
+          />
+          <DocumentCardTitle
+            title={
+              'This is the email content preview which is very very long. The email also has some more content. ' +
+              'The content continues. This is the last.'
+            }
+            shouldTruncate
+            showAsSecondaryTitle
+          />
+          <DocumentCardStatus statusIcon="attach" status="3 Attachments" />
+        </div>
+        <DocumentCardActivity activity="Sent March 13, 2018" people={people.slice(0, 3)} />
+      </DocumentCard>
+
+      <DocumentCard
+        aria-label={
+          'Document Card with logo, text preview, and status. Conversation about annual report. ' +
+          'Content preview. 3 attachments. Sent by Annie Lindqvist and 2 others in March 13, 2018.'
+        }
+        styles={cardStyles}
+        onClickHref="http://bing.com"
+      >
+     
+        <DocumentCardLogo {...logoProps} />
+        <div className={conversationTileClass}>
+          <DocumentCardTitle
+            title="Conversation about annual report: it has a very very long name which should be truncated."
+            shouldTruncate
+          />
+          <DocumentCardTitle
+            title={
+              'This is the email content preview which is very very long. The email also has some more content. ' +
+              'The content continues. This is the last.'
+            }
+            shouldTruncate
+            showAsSecondaryTitle
+          />
+          <DocumentCardStatus statusIcon="attach" status="3 Attachments" />
+        </div>
+        <DocumentCardActivity activity="Sent March 13, 2018" people={people.slice(0, 3)} />
       </DocumentCard>
     </div>
   );

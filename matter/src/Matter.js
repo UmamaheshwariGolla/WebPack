@@ -5,12 +5,13 @@ import { IIconProps, Stack, IStackStyles } from '@fluentui/react';
 import {DialogBlockingExample} from './Components/Dailogue';
 import { ButtonCommandBarExample } from './Components/CreateButton';
 import { SearchBox } from '@fluentui/react/lib/SearchBox';
-import { initializeIcons } from "@fluentui/react";  
+import { initializeIcons ,Pivot,PivotItem,Label} from "@fluentui/react";  
 import { DetailsListDocumentsExample } from './Components/grid';
 import './index.css'
 import Products from './products.json';
 import {DialogModelessExample} from './Components/modeless';
-import { CommandBarButton } from '@fluentui/react/lib/Button';
+
+import { CommandBarButton,DefaultButton } from '@fluentui/react/lib/Button';
 import { Link } from "react-router-dom";
 import {
     Router,
@@ -18,7 +19,7 @@ import {
     Switch,
     withRouter
   } from "react-router-dom";
-
+  import { AccessTime24Filled, wrapIcon } from "@fluentui/react-icons";
 //import {CreateMatterForm} from './text';
 initializeIcons();  
 
@@ -82,33 +83,42 @@ import CreateMatterForm from './CreatMatter';
 
 const ViewTwo = ({onClick}) => (
   
-  <div>
+  <div style={{marginTop:"50px"}}>
  Create Matter
-
+<br/>
  <CreateMatterForm/>
-  
-    <button   onClick={() => {onClick("view1");localStorage.setItem("view",view1)}}>Go Back</button>
-  
+<DefaultButton />
+    {/* <button   onClick={() => {onClick("view1");localStorage.setItem("view",view1)}}>Go Back</button> */}
   </div>
 );
 
-
-
 const ViewOne = ({onClick}) => (
   <div>
-    <div>
-    
-   
-            <CommandBarButton   text="Create"  onClick={() => onClick("view2")} />
+             <div id="Matter" >
+  
                <div className="wrapper">
-               <div><DialogModelessExample/></div>
-               <div style={{width:"700px"}}><SearchBox placeholder="Search" / ></div>
-                </div>
-                 <DetailsListDocumentsExample/>
+         
               
-            </div>
-    
+               <div id="CreateButton" >    <DefaultButton text="Create"  onClick={() => onClick("view2")} /> </div>
+               <div><DialogModelessExample/></div>
+               <div style={{width:"1200px"}}><SearchBox placeholder="Search" / ></div>
+                </div>
+                <br/>
+                <Pivot>
+                <PivotItem headerText="Channel">
+                <div id="details">
+                  {/* <DetailsListDocumentsExample/>   */}
+                  <OperationsTable/>
+                   </div>  
+                    </PivotItem>
+                     <PivotItem headerText="Cx365 Matters">
+                   
+                 </PivotItem>
+                </Pivot>            
+            </div> 
   </div>
+
+
 );
 
 

@@ -94,6 +94,8 @@ export default class CreateMatterForm extends React.Component <any, any>{
   
     render() {
         return (
+
+            
             <div className="container">
                  
  
@@ -104,8 +106,10 @@ export default class CreateMatterForm extends React.Component <any, any>{
                         <SearchBox placeholder="Search" / >        
                     <TextField  type=" description" placeholder="Matter  Description" className="form-control" value={this.state.description} onChange={this.onChangeDescription} />      
                     <TextField  type="template" placeholder="Select Matter Template" className="form-control" value={this.state.template} onChange={this.onChangeTemplate} />
-                     
-                    < PrimaryButton text="save" onClick={this.onSubmit} /> 
+                     <div> < PrimaryButton text="Save" onClick={this.onSubmit} /> 
+                     &nbsp;
+                   < PrimaryButton text="Clear" onClick={this.onSubmit} /> </div>
+                   
                    {/* <button type="submit" className="btn btn-primary btn-block">Submit</button> */}
                    </Stack>
                     </Stack>

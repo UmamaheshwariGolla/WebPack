@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "@fluentui/react": "^8.14.12",
-    "@fluentui/react-icons": "^1.1.125",
+    "@fluentui/react-file-type-icons": "^8.1.1",
+    "@fluentui/react-icons": "^1.1.126",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "@types/react": "^17.0.6",

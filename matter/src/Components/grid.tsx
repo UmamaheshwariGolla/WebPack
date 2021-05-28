@@ -4,8 +4,22 @@ import { Toggle } from '@fluentui/react/lib/Toggle';
 import { Announced } from '@fluentui/react/lib/Announced';
 import { DetailsList, DetailsListLayoutMode, Selection, SelectionMode, IColumn } from '@fluentui/react/lib/DetailsList';
 import { MarqueeSelection } from '@fluentui/react/lib/MarqueeSelection';
-import { mergeStyleSets } from '@fluentui/react/lib/Styling';
+
 import { TooltipHost } from '@fluentui/react';
+import { FontIcon } from '@fluentui/react/lib/Icon';
+import { mergeStyles, mergeStyleSets } from '@fluentui/react/lib/Styling';
+
+const iconClass = mergeStyles({
+  fontSize: 50,
+  height: 50,
+  width: 50,
+  margin: '0 25px',
+});
+const classNames1 = mergeStyleSets({
+  deepSkyBlue: [{ color: 'deepskyblue' }, iconClass],
+  greenYellow: [{ color: 'greenyellow' }, iconClass],
+  salmon: [{ color: 'salmon' }, iconClass],
+});
 
 const classNames = mergeStyleSets({
   fileIconHeaderIcon: {
@@ -102,7 +116,7 @@ export class DetailsListDocumentsExample extends React.Component<{}, IDetailsLis
       },
       {
         key: 'column2',
-        name: 'Name',
+        name: 'Team',
         fieldName: 'name',
         minWidth: 210,
         maxWidth: 350,
@@ -118,7 +132,23 @@ export class DetailsListDocumentsExample extends React.Component<{}, IDetailsLis
       },
       {
         key: 'column3',
-        name: 'Date Modified',
+        name: 'Matter',
+        fieldName: 'name',
+        minWidth: 210,
+        maxWidth: 350,
+        isRowHeader: true,
+        isResizable: true,
+        isSorted: true,
+        isSortedDescending: false,
+        sortAscendingAriaLabel: 'Sorted A to Z',
+        sortDescendingAriaLabel: 'Sorted Z to A',
+        onColumnClick: this._onColumnClick,
+        data: 'string',
+        isPadded: true,
+      },
+      {
+        key: 'column4',
+        name: 'Last Activity',
         fieldName: 'dateModifiedValue',
         minWidth: 70,
         maxWidth: 90,
@@ -130,35 +160,7 @@ export class DetailsListDocumentsExample extends React.Component<{}, IDetailsLis
         },
         isPadded: true,
       },
-      {
-        key: 'column4',
-        name: 'Modified By',
-        fieldName: 'modifiedBy',
-        minWidth: 70,
-        maxWidth: 90,
-        isResizable: true,
-        isCollapsible: true,
-        data: 'string',
-        onColumnClick: this._onColumnClick,
-        onRender: (item: IDocument) => {
-          return <span>{item.modifiedBy}</span>;
-        },
-        isPadded: true,
-      },
-      {
-        key: 'column5',
-        name: 'File Size',
-        fieldName: 'fileSizeRaw',
-        minWidth: 70,
-        maxWidth: 90,
-        isResizable: true,
-        isCollapsible: true,
-        data: 'number',
-        onColumnClick: this._onColumnClick,
-        onRender: (item: IDocument) => {
-          return <span>{item.fileSize}</span>;
-        },
-      },
+   
     ];
 
     this._selection = new Selection({
@@ -184,6 +186,11 @@ export class DetailsListDocumentsExample extends React.Component<{}, IDetailsLis
 
     return (
       <div>
+        <div>
+      <FontIcon aria-label="Compass" iconName="CompassNW" className={classNames1.deepSkyBlue} />
+      <FontIcon aria-label="Dictionary" iconName="Dictionary" className={classNames1.greenYellow} />
+      <FontIcon aria-label="Train" iconName="TrainSolid" className={classNames1.salmon} />
+    </div>
         <div className={classNames.controlWrapper}>
           {/* <Toggle
             label="Enable compact mode"
@@ -390,7 +397,8 @@ function _randomFileIcon(): { docType: string; url: string } {
   const docType: string = FILE_ICONS[Math.floor(Math.random() * FILE_ICONS.length)].name;
   return {
     docType,
-    url: `https://static2.sharepointonline.com/files/fabric/assets/item-types/16/${docType}.svg`,
+    url:
+    `https://static2.sharepointonline.com/files/fabric/assets/item-types/16/${docType}.svg`,
   };
 }
 

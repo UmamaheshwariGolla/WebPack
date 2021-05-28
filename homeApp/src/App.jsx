@@ -27,7 +27,7 @@ const App = () => {
                 
             <Pivot>
                     <PivotItem headerText="Matter" >
-                        <h1>Matter</h1>
+                     
                        <section>
                           <React.Suspense fallback={<div>....loading Matter</div>}>
                                <Matter onBuyItem={onBuyItemClicked}  />
@@ -37,7 +37,7 @@ const App = () => {
                         </section>                 
                     </PivotItem>
                     <PivotItem headerText="Insights" >
-                        <h1>Insights</h1>
+                      
                         <section>
                         <React.Suspense fallback={<div>....loading Insights</div>}>
                              <Insights  items={selected}
@@ -45,7 +45,45 @@ const App = () => {
                        </React.Suspense>                   
                       </section>
                     </PivotItem>
-                   
+    
+
+                    <PivotItem headerText="Approval" >
+                        <h1>Approval</h1>
+                        
+                    </PivotItem>
+    
+                    <PivotItem headerText="Task" >
+                        <h1>Task</h1>
+                        
+                    </PivotItem>
+                    
+                    <PivotItem headerText="Recent File" >
+                        <h1>Recent File</h1>
+                        
+                    </PivotItem>
+                    
+                    <PivotItem headerText="Contact" >
+                        <h1>Contact</h1>
+                        
+                    </PivotItem>
+                    
+                    <PivotItem headerText="Calendar" >
+                        <h1>Calendar</h1>
+                        
+                    </PivotItem>
+                    <PivotItem headerText="Settings" >
+                        <h1>Settings</h1>
+                        
+                    </PivotItem>
+                    <PivotItem headerText="Admin" >
+                        <h1>Admin</h1>
+                        
+                    </PivotItem>
+                    <PivotItem headerText="Power BI" >
+                        <h1>Power BI</h1>
+                        
+                    </PivotItem>
+
             </Pivot>
                 
             </div>
