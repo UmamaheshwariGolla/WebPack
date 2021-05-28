@@ -13,30 +13,35 @@ import { Label, Pivot, PivotItem } from '@fluentui/react';
 
 const App = () => {
   
-
+    const [selected, setSelected] = useState([]);
+    const onBuyItemClicked = item => {
+                console.log(item);
+                setSelected(curr => [...curr, item]);
+            };
+       
+    
     return (
         <div className="app">
       
             <div className="app-content">
                 
             <Pivot>
-                    <PivotItem headerText="Matter">
+                    <PivotItem headerText="Matter" >
                         <h1>Matter</h1>
                        <section>
                           <React.Suspense fallback={<div>....loading Matter</div>}>
-                               <Matter />
+                               <Matter onBuyItem={onBuyItemClicked}  />
                         
                           </React.Suspense>
                       
-                        </section>
-                        
-                     
+                        </section>                 
                     </PivotItem>
-                    <PivotItem headerText="Insights">
+                    <PivotItem headerText="Insights" >
                         <h1>Insights</h1>
                         <section>
                         <React.Suspense fallback={<div>....loading Insights</div>}>
-                             <Insights  />
+                             <Insights  items={selected}
+                                 onClear={() => setSelected([])} />
                        </React.Suspense>                   
                       </section>
                     </PivotItem>

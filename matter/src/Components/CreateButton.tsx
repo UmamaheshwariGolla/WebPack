@@ -20,7 +20,7 @@ export const ButtonCommandBarExample: React.FunctionComponent<IButtonExampleProp
   // The real CommandBar control also uses CommandBarButtons internally.
   return (
     <Stack horizontal styles={stackStyles}>
-      <CommandBarButton iconProps={addIcon} text="Create" disabled={disabled} checked={checked}   />
+      <CommandBarButton iconProps={addIcon} text="Create" disabled={disabled} checked={checked}    />
     </Stack>
     
   );

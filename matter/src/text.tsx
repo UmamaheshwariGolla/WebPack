@@ -4,7 +4,7 @@ import { Stack, IStackProps, IStackStyles } from '@fluentui/react/lib/Stack';
 import { DropdownErrorExample } from './Components/dropdown';
 import { SearchBox } from '@fluentui/react/lib/SearchBox';
 import { ButtonCommandBarExample } from './Components/CreateButton';
-
+import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
 const stackTokens = { childrenGap: 50 };
 const iconProps = { iconName: 'Calendar' };
 
@@ -33,7 +33,11 @@ const columnProps: Partial<IStackProps> = {
 // export default TextFieldBasicExample;
 
 //export default class Matter extends Component 
-export default class TextFieldBasicExample extends React.Component <any, any>{
+
+
+
+
+export default class CreateMatterForm extends React.Component <any, any>{
   userData:any;
 
   constructor(props:any) {
@@ -68,7 +72,7 @@ export default class TextFieldBasicExample extends React.Component <any, any>{
   // React Life Cycle
   componentDidMount() {
       this.userData = JSON.parse(localStorage.getItem('user')|| '{}');
-     // this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+     
       if (localStorage.getItem('user')) {
           this.setState({
               name: this.userData.name,
@@ -96,29 +100,60 @@ export default class TextFieldBasicExample extends React.Component <any, any>{
 
   render() {
       return (
-          <div className="container">
-              <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
+          <div   >
+              
+              <form  onSubmit={this.onSubmit}>
+              
+                  {/* <div className="form-group">
                       <label></label>
                       <SearchBox placeholder="Search" / > 
-                      {/* <input type="text" className="form-control" value={this.state.name} onChange={this.onChangeName} /> */}
+                    
                   </div>
                   <br></br>
-                  <div className="form-group">
+                  <div className="form-group" >
                      
                   <TextField  type=" description" placeholder="Matter  Description" className="form-control" value={this.state.description} onChange={this.onChangeDescription} />
                   </div>
                   <br></br>
                   <div className="form-group">
-                   
+               
                   <TextField  type="template" placeholder="Select Matter Template" className="form-control" value={this.state.template} onChange={this.onChangeTemplate} />
                   </div>
                   <br></br>
-                  
-              </form>
+              
+              
+                  <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                
+                    {/* */}
+
+
+
+
+                    <form onSubmit={this.onSubmit}>
+
+                    <div className="form-group">
+                        <label>Name</label>
+                        <input type="text" className="form-control" value={this.state.name} onChange={this.onChangeName} />
+                    </div>
+                    <div className="form-group">
+                        <label>Description</label>
+                        <input type="email" className="form-control" value={this.state.email} onChange={this.onChangeDescription} />
+                    </div>
+                    <div className="form-group">
+                        <label>Template</label>
+                        <input type="tel" className="form-control" value={this.state.phone} onChange={this.onChangeTemplate} />
+                    </div>
+                    <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                </form>
+
+              </form> 
+             
           </div>
       )
   }
 }
 
 
+  
+  
+  

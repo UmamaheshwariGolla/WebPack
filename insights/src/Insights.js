@@ -16,18 +16,19 @@ import { initializeIcons } from "@fluentui/react";
 initializeIcons();
 
 //import styled from 'styled-components';
-// import { reduce, pluck, add, map } from 'ramda';
+import { reduce, pluck, add, map } from 'ramda';
 
 
 
-// const totalPrice = items => {
-//   console.log(items)
-//   return reduce(
-//       add,
-//       0,
-//       map(parseFloat, pluck('price', items))
-//   );
-// }
+const totalPrice = items => {
+  console.log(items)
+  return reduce(
+   
+      add,
+      0,
+      map(parseFloat, pluck('price', items))
+  );
+}
 
 // const Insights = ({ items, onClear }) => {
 //   return (
