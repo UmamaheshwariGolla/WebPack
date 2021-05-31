@@ -21,16 +21,23 @@ const columnProps: Partial<IStackProps> = {
 import * as React from 'react';
 import Products from './products.json';
 import { setupMaster } from 'cluster';
-export default class CreateMatterForm extends React.Component <any, any>{
+interface Props {
+   
+    sendFuncForm: (user:any) => void
+    info:any
+  }
+
+export default class CreateMatterForm extends React.Component <any,any,Props>{
     userData:any;
   
-    constructor(props:any) {
+    constructor(props:Props) {
         super(props);
   
         this.onChangeName = this.onChangeName.bind(this);
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeTemplate = this.onChangeTemplate.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+      //  console.log("info"+ JSON.stringify(this.props.info));
   
         this.state = {
          
@@ -54,27 +61,47 @@ export default class CreateMatterForm extends React.Component <any, any>{
   
    
     componentDidMount() {
-        this.userData = JSON.parse(localStorage.getItem('user')|| '{}');
-    
-        if (localStorage.getItem('user')) {
-            this.setState({
-               
-                description: this.userData.description,
-                template: this.userData.template
-            })
+        //this.userData = JSON.parse(localStorage.getItem('user')|| '{}');
+       // console.log("userData"+""+ JSON.stringify((this.userData)));
+        
+
+        
+        if (this.props.info) {
+          
+        this.setState(this.props.info)
+
+         
+           
         } else {
-            this.setState({
-             
+            this.setState({            
                 description: '',
                 template: ''
             })
         }
+        
+        // if (localStorage.getItem('user')) {
+        //     console.log(localStorage.getItem('user'))
+        // this.setState({
+               
+        //         description: this.userData.description,
+        //         template: this.userData.template
+        //     })
+
+         
+           
+        // } else {
+        //     this.setState({
+             
+        //         description: '',
+        //         template: ''
+        //     })
+        // }
     }
   
     componentWillUpdate(nextProps:any, nextState:any) {
    
-        console.log(this.setState);
-        localStorage.setItem('user', JSON.stringify(nextState));
+     this.props.sendFuncForm(nextState)
+       // localStorage.setItem('user', JSON.stringify(nextState));
     }
 
    
@@ -83,12 +110,12 @@ export default class CreateMatterForm extends React.Component <any, any>{
         e.preventDefault()
 
         this.setState({
-           
-            description: '',
+        description: '',
         template: ''
         })
-        console.log("hi");
-       localStorage.setItem('user',JSON.stringify(""));
+   
+      // localStorage.setItem('user',JSON.stringify(""));    
+    // this.props.sendFuncForm(this.state);
     }
   
   
@@ -97,9 +124,6 @@ export default class CreateMatterForm extends React.Component <any, any>{
 
             
             <div className="container">
-                 
- 
-
                   <form  >
                     <Stack horizontal tokens={stackTokens} styles={stackStyles}>
                     <Stack {...columnProps}>

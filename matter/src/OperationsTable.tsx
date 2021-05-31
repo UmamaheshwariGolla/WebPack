@@ -81,10 +81,10 @@ const columns = [
  
   ),
 },
-    {key: 'column', name: 'Team', fieldName: 'from', minWidth: 100, maxWidth: 100, isResizable: true},
-    {key: 'column', name: 'Matter', fieldName: 'to', minWidth: 100, maxWidth: 100, isResizable: true},
-    {key: 'column', name: 'Last Activity', fieldName: 'date', minWidth: 100, maxWidth: 100, isResizable: true},
-    {key: 'column', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 70, isResizable: true, 
+    {key: 'column', name: 'Team', fieldName: 'from', minWidth: 100, maxWidth: 250, isResizable: true},
+    {key: 'column', name: 'Matter', fieldName: 'to', minWidth: 100, maxWidth: 250, isResizable: true},
+    {key: 'column', name: 'Last Activity', fieldName: 'date', minWidth: 100, maxWidth: 250, isResizable: true},
+    {key: 'column', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 400, isResizable: true, 
   onRender: () => (
   <div>
     <FontIcon aria-label="Chat" iconName="Chat" className={classNames1.black} />
@@ -97,6 +97,7 @@ const columns = [
   ]
 
 const OperationsTable = () => {
+
     return(
         <div data-is-scrollable={true}>
            {/* <FontIcon aria-label="Compass" iconName="CompassNW" className={classNames1.deepSkyBlue} />

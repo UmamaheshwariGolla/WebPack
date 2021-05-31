@@ -19,87 +19,37 @@ import {
     Switch,
     withRouter
   } from "react-router-dom";
-  import { AccessTime24Filled, wrapIcon } from "@fluentui/react-icons";
+
 //import {CreateMatterForm} from './text';
 initializeIcons();  
 
 import CreateMatterForm from './CreatMatter';
-//import TextFieldBasicExample from "./CreatMatter";
+import { Button } from "./ReuseableComp/Buttons";
+import { Pivots } from "./ReuseableComp/Pivot";
 
-
-// const ViewTwo = ({onClick,onBuyItem}) => (
-//     <div>
-//    Create Matter
-
-     
-//       <CreateMatterForm onBuyItem={onBuyItem}/>
-    
-//       <button onClick={() => onClick("view1")}>Go Back</button>
-//     </div>
-//   );
-
-
-
-//   const ViewOne = ({onClick}) => (
-//     <div>
-//       <div>
-         
-//               <CommandBarButton text="Create" onClick={handleClick} onClick={() => onClick("view2")} />
-//                  <div className="wrapper">
-//                  <div><DialogModelessExample/></div>
-//                  <div style={{width:"700px"}}><SearchBox placeholder="Search" / ></div>
-//                   </div>
-//                    <DetailsListDocumentsExample/>
-                
-//               </div>
-      
-//     </div>
-//   );
-
-// const Matter = ({onBuyItem}) => {
-
-
-//     const [currentView, setCurrentView] = React.useState("view2");
-//   return (
-//     <div>
-  
-//     {
-//        currentView === "view2" ? 
-//       <ViewOne  onBuyItem={onBuyItem} onClick={page => setCurrentView(page)} /> :
-//       <ViewTwo  onClick={page => setCurrentView(page)} />
-//    }
-
-//   </div>
-//   )
-  
-//  }
-
-
-
-
-// attribute
-
-
-
-const ViewTwo = ({onClick}) => (
+const ViewTwo = ({onClick,sendFunc,info}) => {
+  const name='uma';
+  return(
   
   <div style={{marginTop:"50px"}}>
- Create Matter
+    <DefaultButton text="Back"  onClick={() => {onClick("view1");localStorage.setItem("view","view1"); }} />
+   
+<h1> Create Matter</h1>
 <br/>
- <CreateMatterForm/>
-<DefaultButton />
-    {/* <button   onClick={() => {onClick("view1");localStorage.setItem("view",view1)}}>Go Back</button> */}
+ <CreateMatterForm sendFuncForm={sendFunc} info={info} icon="Add" text="Create" ButtonType="Default"/> 
   </div>
-);
+)};
 
-const ViewOne = ({onClick}) => (
+const ViewOne = ({onClick}) =>{
+  
+const PivotItems= ['View', 'Show', 'Display'];
+const PivotItems1= ['View1', 'Show1', 'Display1'];
+  return (
   <div>
              <div id="Matter" >
   
                <div className="wrapper">
-         
-              
-               <div id="CreateButton" >    <DefaultButton text="Create"  onClick={() => onClick("view2")} /> </div>
+               <div id="CreateButton" > <DefaultButton text="Create"  onClick={() => onClick("view2")} /> </div>
                <div><DialogModelessExample/></div>
                <div style={{width:"1200px"}}><SearchBox placeholder="Search" / ></div>
                 </div>
@@ -109,6 +59,9 @@ const ViewOne = ({onClick}) => (
                 <div id="details">
                   {/* <DetailsListDocumentsExample/>   */}
                   <OperationsTable/>
+                  {/* Reuable button < Pivots DisplayData={PivotItems}/>
+                  <br></br>
+                  < Pivots DisplayData={PivotItems1}/> */}
                    </div>  
                     </PivotItem>
                      <PivotItem headerText="Cx365 Matters">
@@ -119,27 +72,37 @@ const ViewOne = ({onClick}) => (
   </div>
 
 
-);
+)
+};
 
 
-const Matter = () => {
+const Matter = ({ Receive,info}) => {
+const alert=()=>{
+  console.log("hi")
+}
+console.log(info)
+const [currentView, setCurrentView] = React.useState(localStorage.getItem("view"));
 
-
-  const [currentView, setCurrentView] = React.useState(localStorage.getItem("view"));
-console.log(currentView);
 return (
   <div>
+    
+    {/* Reuable button <Button HandleFunc={alert} text="create" icon="Add"/> */}
+  <div>
+   
   {
      currentView === "view1" ? 
-    <ViewOne onClick={page => {setCurrentView(page);localStorage.setItem("view",page);
-    }} /> :
-    <ViewTwo onClick={page => {setCurrentView(page);localStorage.setItem("view",page)}} />
+    <ViewOne      onClick={page => {setCurrentView(page);localStorage.setItem("view",page); }} /> :
+    <ViewTwo  sendFunc={Receive} info={info}  onClick={page => {setCurrentView(page);localStorage.setItem("view",page)}} />
    
  }
   
+</div>
 </div>
 )
 }
 
 
 export default Matter;
+
+
+

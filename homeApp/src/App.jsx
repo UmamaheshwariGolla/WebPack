@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import ReactDOM from "react-dom";
 
 const Insights= React.lazy(() => import('mf-insights/Insights'))
@@ -13,12 +13,23 @@ import { Label, Pivot, PivotItem } from '@fluentui/react';
 
 const App = () => {
   
-    const [selected, setSelected] = useState([]);
-    const onBuyItemClicked = item => {
-                console.log(item);
-                setSelected(curr => [...curr, item]);
-            };
+    //const [selected, setSelected] = useState([]);
+    // const onBuyItemClicked = item => {
+    //             console.log(item);
+    //             setSelected(curr => [...curr, item]);
+    //         };
        
+     const [data,setData]=useState({ 
+        description: '',
+        template: ''
+     });
+     const recived=(user)=>{
+        console.log("goodMorning" + JSON.stringify( user))
+        setData(user)
+       console.log("data"+""+  JSON.stringify( data));
+      // localStorage.setItem('user', JSON.stringify(data));
+    }
+
     
     return (
         <div className="app">
@@ -30,18 +41,21 @@ const App = () => {
                      
                        <section>
                           <React.Suspense fallback={<div>....loading Matter</div>}>
-                               <Matter onBuyItem={onBuyItemClicked}  />
+                               {/* <Matter onBuyItem={onBuyItemClicked}  /> */}
+                               <Matter Receive={recived} info={data}/>
                         
                           </React.Suspense>
                       
+              
                         </section>                 
                     </PivotItem>
                     <PivotItem headerText="Insights" >
                       
                         <section>
                         <React.Suspense fallback={<div>....loading Insights</div>}>
-                             <Insights  items={selected}
-                                 onClear={() => setSelected([])} />
+                            <Insights/>
+                             {/* <Insights  items={selected}
+                                 onClear={() => setSelected([])} /> */}
                        </React.Suspense>                   
                       </section>
                     </PivotItem>
@@ -94,47 +108,5 @@ const App = () => {
 
 
 
-// const App = () => {
-//     const [selected, setSelected] = useState([]);
-
-//     const onBuyItemClicked = item => {
-//         console.log(item);
-//         setSelected(curr => [...curr, item]);
-     
-//     };
-
-//     return (
-//         <div className="app">
-           
-//             <div className="app-content">
-//             <Pivot>
-//             <PivotItem headerText="Items">
-                     
-//                 <section>
-//                     <React.Suspense fallback={<div>....loading items</div>}>
-//                         <Matter
-//                             onBuyItem={onBuyItemClicked}
-//                         />
-//                     </React.Suspense>
-//                 </section>
-//                 </PivotItem>
-//                 <PivotItem headerText="Insights">
-//                 <section>
-//                     {
-//                         selected.length > 0 &&
-//                         <React.Suspense fallback={<div>....loading basket</div>}>
-//                             <Insights
-//                                 items={selected}
-//                                 onClear={() => setSelected([])}
-//                             />
-//                         </React.Suspense>
-//                     }
-//                 </section>
-//                 </PivotItem>
-//                 </Pivot>
-//             </div>
-//         </div>
-//     )
-// };
 
 ReactDOM.render(<App />, document.getElementById("app"));
