@@ -13,23 +13,28 @@ import { Label, Pivot, PivotItem } from '@fluentui/react';
 
 const App = () => {
   
-    //const [selected, setSelected] = useState([]);
-    // const onBuyItemClicked = item => {
-    //             console.log(item);
-    //             setSelected(curr => [...curr, item]);
-    //         };
-       
-     const [data,setData]=useState({ 
-        description: '',
-        template: ''
-     });
-     const recived=(user)=>{
-        console.log("goodMorning" + JSON.stringify( user))
-        setData(user)
-       console.log("data"+""+  JSON.stringify( data));
-      // localStorage.setItem('user', JSON.stringify(data));
-    }
 
+       
+     const [data,setData]=useState({  });
+   
+    
+    const recived=(dataReceived,key,subKey)=>{
+      
+      
+              
+
+              setData( prevValues => {
+                return { ...prevValues,[key]: {...prevValues[key],[subKey]:dataReceived}}})
+
+                  //setData({ ...data, [key]: { [subKey]: dataReceived} });
+                 //    setData({ ...data, [key]: {...data[key],[subKey]: dataReceived} });
+                     // setData({...data, [key]: dataReceived })
+                   console.log("i am from "+key+" "+JSON.stringify(data))
+    
+    }
+   
+
+  
     
     return (
         <div className="app">
@@ -38,24 +43,26 @@ const App = () => {
                 
             <Pivot>
                     <PivotItem headerText="Matter" >
-                     
+               
                        <section>
                           <React.Suspense fallback={<div>....loading Matter</div>}>
                                {/* <Matter onBuyItem={onBuyItemClicked}  /> */}
-                               <Matter Receive={recived} info={data}/>
+                               <Matter Receive={recived} info={data.Matter} insightsdata={data.Insight}/>
                         
                           </React.Suspense>
                       
               
                         </section>                 
                     </PivotItem>
+                
+
                     <PivotItem headerText="Insights" >
                       
                         <section>
                         <React.Suspense fallback={<div>....loading Insights</div>}>
-                            <Insights/>
-                             {/* <Insights  items={selected}
-                                 onClear={() => setSelected([])} /> */}
+                
+                            <Insights Receive={recived} info={data.Insight}/>
+                           
                        </React.Suspense>                   
                       </section>
                     </PivotItem>

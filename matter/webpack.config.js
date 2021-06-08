@@ -5,7 +5,7 @@ module.exports = {
   output: {
        
     publicPath: "http://localhost:8081/", 
- //publicPath: "https://luigi-teams-p-matter.azurewebsites.net/",
+   // publicPath: "https://luigi-teams-p-matter.azurewebsites.net/",
   },
 
   resolve: {
@@ -14,9 +14,9 @@ module.exports = {
 
   devServer: {
     port: 8081,
-  //  historyApiFallback: true
+    historyApiFallback: true
   },
-
+  devtool: "source-map",
   module: {
     rules: [
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },

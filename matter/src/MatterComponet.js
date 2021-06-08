@@ -113,7 +113,7 @@ import { ButtonCommandBarExample } from './Components/CreateButton';
 import { SearchBox } from '@fluentui/react/lib/SearchBox';
 import { initializeIcons ,Pivot,PivotItem,Label} from "@fluentui/react";  
 import { DetailsListDocumentsExample } from './Components/grid';
-import './index.css'
+import {DocumentCardBasic} from './Components/cardtitle';
 import Products from './products.json';
 import {DialogModelessExample} from './Components/modeless';
 
@@ -136,36 +136,43 @@ import { Pivots } from "./ReuseableComp/Pivot";
  
 
 
+import { useHistory } from 'react-router-dom';
+
+const MatterCom = ({insightsdata}) => {
+  console.log(JSON.stringify(insightsdata))
 
 
-const MatterCom = () => {
-const PivotItems1=["Welocme","Display"]
-const PivotItems=["Add","Create"]
 return (
 <div>
 <div id="Matter" >
   
-                  <div className="wrapper">
+                  <div className="MatterComwrapper">
+                  
                   <div id="CreateButton" > 
-                  {/* <DefaultButton text="Create"   /> */}
-                   
+                 
                    </div>
-                  <div><DialogModelessExample/></div>
-                  <div style={{width:"1200px"}}><SearchBox placeholder="Search" / ></div>
+    
+                  {/* <div style={{width:"1200px"}}><SearchBox placeholder="Search" / ></div> */}
                    </div>
                    <br/>
                    <Pivot>
                    <PivotItem headerText="Channel">
-                   <div id="details">
-                     {/* <DetailsListDocumentsExample/>   */}
-                     {/* <OperationsTable/> */}
-                     < Pivots DisplayData={PivotItems}/>
-                     <br></br>
-                     < Pivots DisplayData={PivotItems1}/>
+                        <div id="details">
+                    
+                             <OperationsTable/>
+              
                       </div>  
                        </PivotItem>
                         <PivotItem headerText="Cx365 Matters">
-                     
+                          {/* <DocumentCardBasic insightsdata={insightsdata}/> */}
+                          {insightsdata ? 
+                          <div style={{border:"1px solid black",width:"300px", marginTop:"20px",}}>
+                          <h1>Name : {insightsdata.InsForm.name}</h1>
+                          <h1>User : {insightsdata.InsForm.username} </h1>
+                          </div>:
+                          <h1></h1>
+                          }
+                           
                     </PivotItem>
                    </Pivot>            
                </div> 

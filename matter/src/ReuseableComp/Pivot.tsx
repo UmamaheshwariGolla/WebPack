@@ -13,7 +13,8 @@ interface Props {
 export const Pivots: React.FunctionComponent<Props>= (props) => {
    const {DisplayData} = props;
   return (
-
+//const PivotItems1=["Welocme","Display"]
+//const PivotItems=["Add","Create"]
 <div>
     <Pivot aria-label="Basic Pivot Example">
 

@@ -74,17 +74,17 @@ const operations = [
 
 
 const columns = [
-  {key: 'column', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 80, isResizable: true,
+  {key: 'column1', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 80, isResizable: true,
   onRender: () => (
   
     <FontIcon aria-label="Dictionary" iconName="Dictionary" className={classNames1.greenYellow} />
  
   ),
 },
-    {key: 'column', name: 'Team', fieldName: 'from', minWidth: 100, maxWidth: 250, isResizable: true},
-    {key: 'column', name: 'Matter', fieldName: 'to', minWidth: 100, maxWidth: 250, isResizable: true},
-    {key: 'column', name: 'Last Activity', fieldName: 'date', minWidth: 100, maxWidth: 250, isResizable: true},
-    {key: 'column', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 400, isResizable: true, 
+    {key: 'column2', name: 'Team', fieldName: 'from', minWidth: 100, maxWidth: 250, isResizable: true},
+    {key: 'column3', name: 'Matter', fieldName: 'to', minWidth: 100, maxWidth: 250, isResizable: true},
+    {key: 'column4', name: 'Last Activity', fieldName: 'date', minWidth: 100, maxWidth: 250, isResizable: true},
+    {key: 'column5', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 400, isResizable: true, 
   onRender: () => (
   <div>
     <FontIcon aria-label="Chat" iconName="Chat" className={classNames1.black} />
