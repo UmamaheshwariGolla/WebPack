@@ -4,9 +4,6 @@
  import { PrimaryButton, DefaultButton } from '@fluentui/react/lib/Button';
 
 import { Stack, IStackProps, IStackStyles } from '@fluentui/react/lib/Stack';
-import { DropdownErrorExample } from './Components/dropdown';
-
-import { ButtonCommandBarExample } from './Components/CreateButton';
 
 const stackTokens = { childrenGap: 50 };
 const iconProps = { iconName: 'Calendar' };
@@ -22,8 +19,8 @@ import { withRouter,RouteComponentProps } from 'react-router-dom';
 
 
 import * as React from 'react';
-import Products from './products.json';
-import { setupMaster } from 'cluster';
+
+
 
 
 // interface Props {

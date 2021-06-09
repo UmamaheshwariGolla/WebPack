@@ -87,7 +87,7 @@ if(props.info)
       <div>
  
       <Stack horizontal styles={stackStyles}>
-      <Button HandleFunc={sendfirst} text="Create" icon="Add" ButtonType="CommandBar"  styles={{height:"28px"}}/>
+      <Button HandleFunc={sendfirst} text="Create" icon="Add" ButtonType="CommandBar"  styles={{height:"33px"}}/>
          {/* <CommandBarButton  iconProps={addIcon} text="Create"  onClick={sendfirst} style={{height:"28px"}}  />  */}
      </Stack>
     

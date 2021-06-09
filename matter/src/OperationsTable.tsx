@@ -1,7 +1,6 @@
 import React from 'react';
 import { DetailsList } from '@fluentui/react';
 
-import 'office-ui-fabric-react/dist/css/fabric.css';
 import { IIconProps, Stack, IStackStyles } from '@fluentui/react';
 import { FontIcon } from '@fluentui/react/lib/Icon';
 import { mergeStyles, mergeStyleSets } from '@fluentui/react/lib/Styling';
@@ -81,10 +80,10 @@ const columns = [
  
   ),
 },
-    {key: 'column2', name: 'Team', fieldName: 'from', minWidth: 100, maxWidth: 250, isResizable: true},
-    {key: 'column3', name: 'Matter', fieldName: 'to', minWidth: 100, maxWidth: 250, isResizable: true},
-    {key: 'column4', name: 'Last Activity', fieldName: 'date', minWidth: 100, maxWidth: 250, isResizable: true},
-    {key: 'column5', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 400, isResizable: true, 
+    {key: 'column2', name: 'Team', fieldName: 'from', minWidth: 100, maxWidth: 200, isResizable: true},
+    {key: 'column3', name: 'Matter', fieldName: 'to', minWidth: 100, maxWidth: 200, isResizable: true},
+    {key: 'column4', name: 'Last Activity', fieldName: 'date', minWidth: 100, maxWidth: 200, isResizable: true},
+    {key: 'column5', name: '', fieldName: 'icon', minWidth: 100, maxWidth: 200, isResizable: true, 
   onRender: () => (
   <div>
     <FontIcon aria-label="Chat" iconName="Chat" className={classNames1.black} />

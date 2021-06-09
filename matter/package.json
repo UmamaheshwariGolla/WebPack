@@ -9,11 +9,6 @@
     "start:live": "webpack-dev-server --open --mode development --liveReload"
   },
   "main": "./build/index.js",
-  "license": "MIT",
-  "author": {
-    "name": "Jack Herrington",
-    "email": "jherr@pobox.com"
-  },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
     "@babel/core": "7.9.6",
@@ -37,18 +32,14 @@
     "@types/react": "^17.0.6",
     "@types/react-dom": "^17.0.5",
     "@types/react-router": "^5.1.14",
-    "@uifabric/react-cards": "^0.115.51",
     "axios": "^0.21.1",
     "history": "^5.0.0",
     "luigi-reuseable-comp": "^1.0.4",
-    "office-ui-fabric-react": "^7.170.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-grid-system": "^7.1.2",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.1.0",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.3.0"
+    "redux-devtools-extension": "^2.13.9"
   }
 }

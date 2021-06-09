@@ -104,20 +104,12 @@
 // export default Matter;
 
 
-
-import React, { useState , Component} from "react";
+//worjking fine
+import React, { useState , Component,useEffect} from "react";
 import OperationsTable from './OperationsTable';
-import { IIconProps, Stack, IStackStyles } from '@fluentui/react';
-import {DialogBlockingExample} from './Components/Dailogue';
-import { ButtonCommandBarExample } from './Components/CreateButton';
-import { SearchBox } from '@fluentui/react/lib/SearchBox';
-import { initializeIcons ,Pivot,PivotItem,Label} from "@fluentui/react";  
-import { DetailsListDocumentsExample } from './Components/grid';
-import {DocumentCardBasic} from './Components/cardtitle';
-import Products from './products.json';
-import {DialogModelessExample} from './Components/modeless';
 
-import { CommandBarButton,DefaultButton } from '@fluentui/react/lib/Button';
+import { initializeIcons ,Pivot,PivotItem,Label} from "@fluentui/react";  
+
 
 import {
     Router,
@@ -129,9 +121,6 @@ import {
 //import {CreateMatterForm} from './text';
 initializeIcons();  
 
-import CreateMatterForm from './CreatMatter';
-import { Button } from "./ReuseableComp/Buttons";
-import { Pivots } from "./ReuseableComp/Pivot";
 //  comment this out.
  
 
@@ -139,7 +128,7 @@ import { Pivots } from "./ReuseableComp/Pivot";
 import { useHistory } from 'react-router-dom';
 
 const MatterCom = ({insightsdata}) => {
-  console.log(JSON.stringify(insightsdata))
+ // console.log(JSON.stringify(insightsdata))
 
 
 return (
@@ -156,19 +145,22 @@ return (
                    </div>
                    <br/>
                    <Pivot>
+                   
                    <PivotItem headerText="Channel">
                         <div id="details">
-                    
-                             <OperationsTable/>
-              
+                           
+                        <OperationsTable/>
+                      
                       </div>  
-                       </PivotItem>
-                        <PivotItem headerText="Cx365 Matters">
+                    </PivotItem>
+                    <PivotItem headerText="Cx365 Matters">
                           {/* <DocumentCardBasic insightsdata={insightsdata}/> */}
+                       
                           {insightsdata ? 
-                          <div style={{border:"1px solid black",width:"300px", marginTop:"20px",}}>
-                          <h1>Name : {insightsdata.InsForm.name}</h1>
-                          <h1>User : {insightsdata.InsForm.username} </h1>
+                          <div style={{border:"1px solid black",width:"300px", marginTop:"20px"}}>
+                        <h1 style={{paddingLeft:"10px"}}>Data from Insights</h1>
+                         <h2 style={{paddingLeft:"20px"}}>Client  : {insightsdata.InsForm.name}</h2>
+                         <h2 style={{paddingLeft:"20px"}}>Location : {insightsdata.InsForm.username} </h2>
                           </div>:
                           <h1></h1>
                           }
@@ -181,3 +173,5 @@ return (
 }
 
 export default MatterCom;
+
+

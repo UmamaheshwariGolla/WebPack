@@ -122,20 +122,21 @@ import './index.css'
 initializeIcons ();
 const Matter=({ Receive,info,insightsdata})=>{
 
+
   return(
    
     <div >
-<br/>
+     <br/>
        <div className="wrappers">
       
        <div> <DialogModelessExample  sendFuncForm={ Receive} info={info}  /></div>
-        <div style={{width:"1200px"}}><SearchBox placeholder="Search" / ></div>
+        <div style={{width:"1113px"}}><SearchBox placeholder="Search" / ></div>
         
        <div className="MatterCom" >
        <Router>
       <Switch>
         {/* <Route  exact path="/" component={MatterCom} /> */}
-         <Route  exact path="/" component={()=><MatterCom insightsdata={insightsdata} /> } /> 
+         <Route  exact path="/" render={()=><MatterCom insightsdata={insightsdata} /> } /> 
         <Route  path="/create" component={()=><CreateMatterForm sendFuncForm={ Receive} info={info} /> }/>  
       </Switch>
   

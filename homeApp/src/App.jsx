@@ -117,3 +117,49 @@ const App = () => {
 
 
 ReactDOM.render(<App />, document.getElementById("app"));
+
+
+
+
+
+// import ReactDOM from "react-dom";
+// import React, { useState ,useEffect} from "react";
+// import { Pivot, PivotItem } from '@fluentui/react';
+
+// const Insights= React.lazy(() => import('mf-insights/Insights'))
+// const Matter= React.lazy(() => import('mf-matter/Matter'))
+
+// const App = () => { 
+
+//      const [data,setData]=useState({  });
+   
+//      const receivedData=(dataReceived,key,subKey)=>{
+//               setData( prevValues => {
+//                 return { ...prevValues,[key]: {...prevValues[key],[subKey]:dataReceived}}})
+//             }
+    
+//     return (
+//         <div className="app"> 
+//                 <Pivot>
+//                     <PivotItem headerText="Matter" >
+//                        <section>
+//                           <React.Suspense fallback={<div>....loading Matter</div>}>
+//                                <Matter Receive={receivedData} matterData={data.Matter} />                       
+//                           </React.Suspense>              
+//                         </section>                 
+//                     </PivotItem>
+//                     <PivotItem headerText="Insights" >                     
+//                         <section>
+//                         <React.Suspense fallback={<div>....loading Insights</div>}>
+//                             <Insights Receive={receivedData} insightsdata={data.Insight}/>
+//                        </React.Suspense>                   
+//                       </section>
+//                     </PivotItem>
+//               </Pivot>
+                
+//             </div>
+//     )
+// };
+// ReactDOM.render(<App />, document.getElementById("app"));
+
+
